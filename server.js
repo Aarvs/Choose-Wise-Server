@@ -432,7 +432,15 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: [
+    'http://localhost:3001',
+    'http://localhost:3000',
+    'http://localhost:5173',
+    'https://choose-wise.vercel.app'
+  ],
+  credentials: true
+}));
 app.use(express.json());
 
 // Configuration
