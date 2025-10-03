@@ -436,8 +436,9 @@ app.use(cors({
   origin: [
     'http://localhost:3001',
     'http://localhost:3000',
-    'http://localhost:5173',
-    'https://choose-wise.vercel.app'
+    'https://choose-wise.vercel.app',
+    'https://choose-wise-ozlsma7j5-aarvs-projects.vercel.app',
+    'https://choose-wise-*.vercel.app'
   ],
   credentials: true
 }));
