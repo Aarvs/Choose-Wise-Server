@@ -133,7 +133,7 @@ const callGeminiAPI = async (prompt, systemPrompt) => {
 
     // Get the generative model with system instruction
     const model = genAI.getGenerativeModel({ 
-      model: "gemini-2.0-flash",
+      model: "gemini-2.5-flash-lite",
       systemInstruction: systemPrompt
     });
 
@@ -266,7 +266,7 @@ app.post("/api/claude", async (req, res) => {
         return res.json({
           response: response.text,
           timestamp: new Date().toISOString(),
-          service: "Gemini 1.5 Flash"
+          service: "Gemini 2.5-Flash-Lite"
         });
       } catch (geminiError) {
         console.error(`❌ [${requestId}] Gemini failed:`, {
@@ -342,7 +342,7 @@ app.listen(PORT, () => {
   console.log(`   OpenAI:   ${process.env.OPENAI_API_KEY ? "✅ Ready" : "❌ No API Key"}`);
   console.log(`\n📝 Using CORRECT model names:`);
   console.log(`   Claude: claude-sonnet-4-20250514`);
-  console.log(`   Gemini: gemini-2.5-flash (v1 API)`);
+  console.log(`   Gemini: gemini-2.5-flash-lite`);
   console.log(`   OpenAI: gpt-3.5-turbo`);
   console.log(`\n🎯 Ready to serve requests!`);
 });
